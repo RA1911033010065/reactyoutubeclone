@@ -4,6 +4,8 @@ import { Grid } from '@material-ui/core';
 
 import youtube from './api/youtube';
 import SearchBar from './components/SearchBar';
+import VideoDetail from './components/VideoDetail';
+
 
 
 class App extends React.Component{
@@ -22,8 +24,8 @@ class App extends React.Component{
   }});
 
 
-  console.log(response);
-  //this.setState({video:response.data.item,selectedVideo:response.data.item[0]})
+ // console.log(response);
+  this.setState({video:response.data.items,selectedVideo:response.data.items[0]})
 
   }
   render(){
@@ -36,6 +38,7 @@ class App extends React.Component{
           </Grid>
           <Grid item xs={8}>
             {/*VideoDetail component */}
+            <VideoDetail video={this.state.selectedVideo} />
           </Grid>
           <Grid item xs={4}>
             {/*Videolist component */}
