@@ -13,8 +13,12 @@ class App extends React.Component{
     videos:[],
     selectedVideo:null,
   }
+
+  componentDidMount(){
+    this.handleSubmit('Welcome to Youtube')
+  }
   
-  onFormSubmit=(video)=>{
+  onVideoSelect=(video)=>{
   this.setState({selectedVideo:video})
   }
   handleSubmit = async (searchTerm)=>{
